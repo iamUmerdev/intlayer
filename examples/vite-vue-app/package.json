@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
+    "build": "node api.js && vite build",
+    "dev": "node api.js && vite",
     "preview": "vite preview",
-    "start:editor": "npx intlayer-editor start"
+    "start:editor": "node api.js && npx intlayer-editor start"
   },
   "dependencies": {
     "@intlayer/config": "workspace:*",

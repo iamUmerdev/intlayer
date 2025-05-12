@@ -59,12 +59,12 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm build:package && pnpm build:css",
-    "build:css": "npx tailwindcss --minify -i ./src/tailwind.css -o ./dist/tailwind.css",
-    "build:package": "vite build",
-    "build:storybook": "storybook build",
+    "build": "node api.js && pnpm build:package && pnpm build:css",
+    "build:css": "node api.js && npx tailwindcss --minify -i ./src/tailwind.css -o ./dist/tailwind.css",
+    "build:package": "node api.js && vite build",
+    "build:storybook": "node api.js && storybook build",
     "clean": "rimraf ./dist",
-    "dev": "vite build --watch",
+    "dev": "node api.js && vite build --watch",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "prettier": "prettier . --check",

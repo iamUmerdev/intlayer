@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "lint": "expo lint",
     "reset-project": "node ./scripts/reset-project.cjs",
-    "start": "expo start",
+    "start": "node api.js && expo start",
     "test": "jest --watchAll",
     "web": "expo start --web"
   },

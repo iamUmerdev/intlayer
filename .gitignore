@@ -21,8 +21,6 @@ dictionaries
 /keywords.txt
 
 # env
-.env
-.env.*
 !.env.template
 .vercel
 
@@ -32,3 +30,4 @@ dictionaries
 # service-worker
 sw.js
 workbox-*.js
+config.bat

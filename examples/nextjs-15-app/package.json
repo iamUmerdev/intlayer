@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "dev:turbo": "next dev --turbopack",
+    "build": "node api.js && next build",
+    "dev": "node api.js && next dev",
+    "dev:turbo": "node api.js && next dev --turbopack",
     "lint": "next lint",
-    "start": "next start",
-    "start:editor": "npx intlayer-editor start",
+    "start": "node api.js && next start",
+    "start:editor": "node api.js && npx intlayer-editor start",
     "test": ""
   },
   "dependencies": {

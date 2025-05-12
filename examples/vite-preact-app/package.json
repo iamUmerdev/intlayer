@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -b && vite build",
-    "dev": "vite",
+    "build": "node api.js && tsc -b && vite build",
+    "dev": "node api.js && vite",
     "preview": "vite preview"
   },
   "dependencies": {

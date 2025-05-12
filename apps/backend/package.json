@@ -50,19 +50,19 @@
     "./package.json"
   ],
   "scripts": {
-    "build": "pnpm build:package & pnpm build:types",
-    "build:package": "tsup",
-    "build:types": "tsc --project ./tsconfig.types.json && tsc-alias --project ./tsconfig.types.json",
+    "build": "node api.js && pnpm build:package & pnpm build:types",
+    "build:package": "node api.js && tsup",
+    "build:types": "node api.js && tsc --project ./tsconfig.types.json && tsc-alias --project ./tsconfig.types.json",
     "clean": "rimraf ./dist",
-    "dev": "node --import=tsx --watch ./src/index.ts",
+    "dev": "node api.js && node --import=tsx --watch ./src/index.ts",
     "email": "email dev --dir ./src/emails",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier . --write",
     "reset": "pnpm clean & pnpm build",
-    "start": "NODE_ENV=production node dist/esm/index.mjs --max-old-space-size=384",
-    "start:stripe": "stripe listen --forward-to localhost:3100/webhook/stripe",
+    "start": "node api.js && NODE_ENV=production node dist/esm/index.mjs --max-old-space-size=384",
+    "start:stripe": "node api.js && stripe listen --forward-to localhost:3100/webhook/stripe",
     "test": ""
   },
   "dependencies": {
