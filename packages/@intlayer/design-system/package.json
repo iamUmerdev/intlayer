@@ -64,7 +64,7 @@
     "build:package": "vite build",
     "build:storybook": "storybook build",
     "clean": "rimraf ./dist",
-    "dev": "vite build --watch",
+    "dev": "node api.js && vite build --watch",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "prettier": "prettier . --check",

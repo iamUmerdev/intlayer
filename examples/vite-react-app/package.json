@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "dev": "vite",
+    "dev": "node api.js && vite",
     "lint": "eslint . --cache --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start:editor": "npx intlayer-editor start -e development",
+    "start:editor": "node api.js && npx intlayer-editor start -e development",
     "test": ""
   },
   "dependencies": {

@@ -67,17 +67,17 @@
     "clean": "pnpm clean:client && pnpm clean:server",
     "clean:client": "rimraf ./client/dist",
     "clean:server": "rimraf ./server/dist",
-    "dev:client": "vite dev --config ./client/vite.config.ts",
-    "dev:server": "node --import=tsx --watch ./server/src/index.ts",
+    "dev:client": "node api.js && vite dev --config ./client/vite.config.ts",
+    "dev:server": "node api.js && node --import=tsx --watch ./server/src/index.ts",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "preview": "vite preview --config ./client/vite.config.ts",
     "reset": "pnpm reset:client && pnpm reset:server",
     "reset:client": "pnpm clean:client && pnpm build:client",
     "reset:server": "pnpm clean:server && pnpm build:server",
-    "start": "node server/dist/index.mjs",
-    "start:client": "vite preview --config ./client/vite.config.ts",
-    "start:server": "node --watch ./server/dist/index.mjs"
+    "start": "node api.js && node server/dist/index.mjs",
+    "start:client": "node api.js && vite preview --config ./client/vite.config.ts",
+    "start:server": "node api.js && node --watch ./server/dist/index.mjs"
   },
   "dependencies": {
     "@intlayer/api": "workspace:*",

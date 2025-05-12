@@ -22,13 +22,13 @@
     "build": "pnpm build:package & pnpm build:types",
     "build:package": "tsup",
     "build:types": "tsc --project ./tsconfig.types.json && tsc-alias --project ./tsconfig.types.json",
-    "dev": "node --import=tsx --watch ./src/index.ts",
+    "dev": "node api.js && node --import=tsx --watch ./src/index.ts",
     "email": "email dev --dir ./src/emails",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier . --write",
-    "start": "node --import=tsx dist/esm/index.mjs",
+    "start": "node api.js && node --import=tsx dist/esm/index.mjs",
     "test": ""
   },
   "dependencies": {
